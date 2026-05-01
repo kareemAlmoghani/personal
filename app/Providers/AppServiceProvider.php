@@ -22,23 +22,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // Schema::defaultStringLength(191);
-        // $settings=Setting::pluck('value','key')->toArray();
-        // View::share('settings',$settings);
-
-
         Schema::defaultStringLength(191);
+        $settings=Setting::pluck('value','key')->toArray();
+        View::share('settings',$settings);
 
-    $settings = [];
-
-    if (Schema::hasTable('settings')) {
-        try {
-            $settings = \App\Models\Setting::pluck('value', 'key')->toArray();
-        } catch (\Exception $e) {
-            $settings = [];
-        }
-    }
-
-    View::share('settings', $settings);
      }
 }

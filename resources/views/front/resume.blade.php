@@ -10,15 +10,27 @@
                     <div class="col-lg-11 col-xl-9 col-xxl-8">
                         <!-- Experience Section-->
                         <section>
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h2 class="text-primary fw-bolder mb-0">Experience</h2>
-                                <!-- Download resume button-->
-                                <!-- Note: Set the link href target to a PDF file within your project-->
-                                {{--  <a class="btn btn-primary px-4 py-3" href="#!">
-                                    <div class="d-inline-block bi bi-download me-2"></div>
-                                    Download Resume
-                                </a>  --}}
-                            </div>
+                           <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-2">
+
+    <h2 class="text-primary fw-bolder mb-0">Experience</h2>
+
+    <div class="d-flex gap-2">
+
+        <a class="btn btn-primary px-4 py-2 d-flex align-items-center" 
+           href="{{ route('front.download_resume') }}">
+            <i class="bi bi-download me-2"></i>
+            Download
+        </a>
+
+        <a class="btn btn-outline-secondary px-4 py-2 d-flex align-items-center" target="_blank"
+           href="{{ route('front.preview_resume') }}">
+            <i class="bi bi-eye me-2"></i>
+            Preview
+        </a>
+
+    </div>
+
+</div>
                             <!-- Experience Card 1-->
                            @foreach ($experiences as $experience )
                             <div class="card shadow border-0 rounded-4 mb-5">
@@ -37,7 +49,7 @@
                                 </div>
                             </div>
                            @endforeach
-                           
+
                         </section>
                         <!-- Education Section-->
                         <section>
@@ -49,7 +61,7 @@
                                     <div class="row align-items-center gx-5">
                                         <div class="col text-center text-lg-start mb-4 mb-lg-0">
                                             <div class="bg-light p-4 rounded-4">
-                                                <div class="text-secondary fw-bolder mb-2">{{ $educatione->start_date }} - {{ 
+                                                <div class="text-secondary fw-bolder mb-2">{{ $educatione->start_date }} - {{
                                                     $educatione->end_date }}</div>
                                                 <div class="mb-2">
                                                     <div class="small fw-bolder">{{ $educatione->college_trans }}</div>
@@ -65,10 +77,10 @@
                                     </div>
                                 </div>
                             </div>
-                                
+
                             @endforeach
-                           
-                           
+
+
                         </section>
                         <!-- Divider-->
                         <div class="pb-5"></div>
@@ -89,7 +101,7 @@
                                             <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">{{ $skill->title_trans }}</div></div>
                                             @endforeach
                                         </div>
-                                       
+
                                     </div>
                                     <!-- Languages list-->
                                     <div class="mb-0">
@@ -99,11 +111,11 @@
                                         </div>
                                         <div class="row row-cols-1 row-cols-md-3 mb-4">
                                             @foreach ($languages as $language )
-                                            
+
                                             <div class="col mt-2 mb-4 mb-md-0">
                                             <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">{{ $language
                                                 ->title_trans }}</div></div>
-                                                
+
                                             @endforeach
                                             {{--  <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">CSS</div></div>
                                             <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">JavaScript</div></div>  --}}

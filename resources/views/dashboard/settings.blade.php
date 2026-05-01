@@ -127,9 +127,9 @@
                    <x-text-input id="contact_content" class="block mt-1 w-full" type="text" name="contact_content" :value="$settings['contact_content']??''" />
                    </div>
               </div>
-              </div>
               <x-primary-button class="mt-6">Save</x-primary-button>
             </form>
+              </div>
 
                 </div>
             </div>

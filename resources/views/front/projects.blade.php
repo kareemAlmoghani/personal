@@ -18,19 +18,21 @@
                                             <h2 class="fw-bolder">{{ $project->name_trans }}</h2>
                                             <p>{{ $project->content_trans }}</p>
                                             @if(isset($project->link))
-                                            <a href="{{ $project->link }}">Project Link</a>
+                                              <a href="{{ $project->link }}" target="_blank" class="btn btn-primary mt-3 px-4">View Project</a>            
                                             @endif
                                         </div>
                                         <img class="img-fluid" src="{{ asset($project->image) }}" alt="..." />
                                     </div>
                                 </div>
                             </div>
-                                
+
                             @endforeach
-                         
-                            
+
+
                         </div>
+
                     </div>
+                    {{$projects->links('vendor.pagination.bootstrap-5')}}
                 </div>
             </section>
             <!-- Call to action section-->
@@ -45,5 +47,5 @@
                 </div>
             </section>
         </main>
-    
+
 @endsection
